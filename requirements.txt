@@ -1,0 +1,30 @@
+# === Core FastAPI App ===
+fastapi
+uvicorn
+pydantic
+python-dotenv
+logging
+sentence-transformers
+torch
+yfinance
+faiss-cpu
+python-dotenv
+spacy
+re
+datetime
+nummpy
+uuid
+shutil
+SpeechRecognition
+pydub
+edge-tts
+httpx
+nest_asyncio
+streamlit-webrtc
+streamlit
+pandas
+
+
+# === Optional Dependencies ===
+# If you haven't downloaded it yet, install this model as a dependency
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
