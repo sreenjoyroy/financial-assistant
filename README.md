@@ -60,7 +60,7 @@ A voice- and text-enabled financial assistant powered by multi-agent architectur
 ### 1️⃣ Clone the Repo
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/financial-assistant.git
+git clone https://github.com/sreenjoyroy/financial-assistant.git
 cd financial-assistant
 
 2️⃣ Install Dependencies
