@@ -23,6 +23,7 @@ nest_asyncio
 streamlit-webrtc
 streamlit
 pandas
+nest_asyncio
 
 
 # === Optional Dependencies ===
