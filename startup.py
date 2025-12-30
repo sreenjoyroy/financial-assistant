@@ -1,5 +1,6 @@
 import subprocess
 import time
+import sys
 
 services = [
     {"name": "API Agent",        "path": "api_agent/api_service.py",       "port": 8001},
@@ -18,6 +19,8 @@ print("🚀 Launching microservices...\n")
 for service in services:
     print(f"Starting {service['name']} on port {service['port']}...")
     proc = subprocess.Popen([
+        sys.executable,
+        "-m",
         "uvicorn", f"{service['path'].replace('/', '.').replace('.py', '')}:app",
         "--port", str(service["port"]),
         "--reload"

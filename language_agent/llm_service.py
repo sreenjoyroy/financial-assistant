@@ -8,8 +8,9 @@ import json
 import re
 import requests
 import spacy
-import re # Already imported, but good to be explicit
+from dotenv import load_dotenv
 
+load_dotenv()
 nlp = spacy.load("en_core_web_sm")
 
 # Setup logging
@@ -26,11 +27,13 @@ if not OPENROUTER_API_KEY:
     raise EnvironmentError("Missing OPENROUTER_API_KEY environment variable.")
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-MODEL_NAME = "mistralai/mistral-medium"
+MODEL_NAME = "mistralai/mistral-7b-instruct"
 
 HEADERS = {
     "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+    "HTTP-Referer": "http://localhost",
+    "X-Title": "Financial Assistant"
 }
 
 # Schemas
@@ -49,6 +52,9 @@ class FinalNarrativeResponse(BaseModel):
     narrative: str
 
 def clean_narrative(text: str) -> str:
+    if not text or not isinstance(text, str):
+        return ""
+    
     # Step 1: Remove markdown artifacts
     text = re.sub(r"[_*~]+", "", text)
 
