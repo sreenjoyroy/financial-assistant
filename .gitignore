@@ -4,4 +4,6 @@ __pycache__/
 *.log
 .vscode/
 /Sreenjoy
+*.mp3
+my_document.txt
 
